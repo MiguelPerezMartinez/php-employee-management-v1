@@ -1,0 +1,3 @@
+<?php
+require "employeeManager.php";
+
