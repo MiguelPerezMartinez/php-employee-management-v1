@@ -1,8 +1,12 @@
 <?php
 
-require_once("./src/library/loginManager.php");
+// require_once("./src/library/loginController.php");
 
-// $alert = checkSession();
+
+// if (!isset($_SESSION["noActivity"])) {
+//     $_SESSION["noActivity"] = getdate();
+// }
+
 ?>
 
 <!DOCTYPE html>
@@ -20,30 +24,43 @@ require_once("./src/library/loginManager.php");
 </head>
 
 <body>
+    <main class="form-signin">
+        <form id="formLogIn" action="./src/library/loginController.php" method="POST">
 
+            <h1 class="h3 mb-5 fw-normal">Welcome to employee management!</h1>
+
+            <div class="form-floating">
+                <input name="email" type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" data-bs-toggle="tooltip" data-bs-html="true" title="imassembler@assemblerschool.com" autofocus>
+                <label class="mt-2" for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input name="pass" type="password" class="form-control" id="floatingPassword" placeholder="Password" title="Assemb13r">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <!-- // warning alert -->
+            <?php
+            if ($_REQUEST) {
+                if ($_GET["emailError"] == true) {
+                    echo  '<div id="wrongLogIn" class="alert alert-danger" role="alert">
+                        Wrong email or password
+                        </div>';
+                }
+            }
+
+            ?>
+
+            <button class="w-100 btn btn-lg btn-dark" type="submit">Log in</button>
+            <p class="mt-3 mb-3 text-muted">Employee management&nbsp;&copy; 2021</p>
+            <p class="mt-3 mb-3 text-muted">Made with ❤️ in Madrid</p>
+
+        </form>
+    </main>
 </body>
-<main class="form-signin">
-    <form id="formLogIn" action="./src/library/loginController.php" method="POST">
-
-        <h1 class="h3 mb-5 fw-normal">Employee management</h1>
-
-        <div class="form-floating">
-            <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" data-bs-toggle="tooltip" data-bs-html="true" title="imassembler@assemblerschool.com" autofocus>
-            <label class="mt-2" for="floatingInput">Email address</label>
-        </div>
-        <div class="form-floating">
-            <input name="pass" type="password" class="form-control" id="floatingPassword" placeholder="Password" title="Assemb13r">
-            <label for="floatingPassword">Password</label>
-        </div>
-        <!-- <?= ($alert) ? "<div class='alert alert-$alert[type] role='alert'>$alert[text]</div>" : "" ?> -->
-        <button class="w-100 btn btn-lg btn-dark" type="submit">Log in</button>
-        <p class="mt-3 mb-3 text-muted">Employee management&nbsp;&copy; 2021</p>
-        <p class="mt-3 mb-3 text-muted">Made with ❤️ in Madrid</p>
-
-    </form>
-</main>
 
 
-<!-- <script src="./assets/js/index.js"></script> -->
+
+<script src="./assets/js/index.js">
+
+</script>
 
 </html>

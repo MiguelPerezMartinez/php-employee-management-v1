@@ -3,14 +3,49 @@
 
 require_once("./loginManager.php");
 
-$x = $_POST["formData"];
+$form_data = $_POST["formData"];
 
-print_r($x);
+$email = $form_data["employeeEmail"];
 
-getEmployeeName();
+echo "fuera";
+
+if (getEmployeeInfo($email) == true) {
+    echo "true";
+    header("Location: ../src/dashboard.php");
+} else {
+    echo "error";
+    header("Location: ../../index.php?emailError=true");
+}
 
 
-// si $x[0] !== $json_data[0] {
-//     alert ""
-//     header index.php
-// } 
+
+// print_r($form_data);
+
+
+
+
+
+
+
+
+
+
+
+
+function checkPassword($userJsonPassword)
+{
+
+    $passwordDb = "123456";
+
+
+    $passwordDbEnc = password_hash($passwordDb, PASSWORD_DEFAULT);
+
+
+    if (password_verify($userJsonPassword, $passwordDbEnc)) {
+        return true;
+        header("Location: ./src/dashboard.php");
+    } else {
+        return false;
+        header("Location: ../index.php");
+    }
+}

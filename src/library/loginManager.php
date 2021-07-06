@@ -3,16 +3,19 @@
 <?php
 
 
-function getEmployeeName()
+function getEmployeeInfo($email)
 {
-    $json = file_get_contents("../../resources/users.json");
-
-    $json_data = json_decode($json, true);
-
-    print_r($json_data);
+    $json_data = json_decode(file_get_contents("../../resources/users.json"), true);
+    // print_r($json_data);
+    foreach ($json_data["users"] as $user) {
+        if ($user["email"] == $email) {
+        } else {
+            echo "false";
+        }
+    }
 }
 
-/// 
+
 
 
 
