@@ -1,12 +1,5 @@
 <?php
 
-/**
- * EMPLOYEE FUNCTIONS LIBRARY
- *
- * @author: Jose Manuel Orts
- * @date: 11/06/2020
- */
-
 function getEmployees()
 {
   return file_get_contents('../../resources/employees.json');
