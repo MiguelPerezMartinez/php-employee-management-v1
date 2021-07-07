@@ -57,9 +57,8 @@ $("#jsGrid").jsGrid({
     },
     {
       name: "lastName",
-      type: "text",
-      width: 150,
-      validate: "required",
+      type: "hidden",
+      css: "hide",
     },
     {
       name: "email",
