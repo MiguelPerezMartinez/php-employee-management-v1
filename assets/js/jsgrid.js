@@ -1,6 +1,6 @@
 $("#jsGrid").jsGrid({
   width: "100%",
-  height: "800px",
+  height: "auto",
 
   inserting: true,
   editing: true,
@@ -15,7 +15,7 @@ $("#jsGrid").jsGrid({
     loadData: function (filter) {
       return $.ajax({
         type: "GET",
-        url: "src/dashboard.php",
+        url: "library/employeeController.php",
         data: filter,
         dataType: "json",
       });
@@ -23,18 +23,22 @@ $("#jsGrid").jsGrid({
     insertItem: function (item) {
       return $.ajax({
         type: "POST",
-        url: "src/dashboard.php",
+        url: "library/employeeController.php",
         data: item,
       });
     },
     updateItem: function (item) {
       return $.ajax({
         type: "PUT",
-        url: "src/dashboard.php",
+        url: "library/employeeController.php",
         data: item,
-        success: function (result) {
-          console.log(result);
-        },
+      });
+    },
+    deleteItem: function (item) {
+      return $.ajax({
+        type: "DELETE",
+        url: "library/employeeController.php",
+        data: item,
       });
     },
   },
@@ -65,9 +69,8 @@ $("#jsGrid").jsGrid({
     },
     {
       name: "gender",
-      type: "text",
-      width: 150,
-      validate: "required",
+      type: "hidden",
+      css: "hide",
     },
     {
       name: "city",
