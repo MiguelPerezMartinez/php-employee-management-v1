@@ -37,7 +37,7 @@
                 <input name="pass" type="password" class="form-control" id="floatingPassword" placeholder="Password" title="Assemb13r">
                 <label for="floatingPassword">Password</label>
             </div>
-            <!-- // warning alert -->
+            <!--  warning alert -->
             <?php
             if ($_REQUEST) {
                 if ($_GET["emailError"] == true) {
@@ -46,7 +46,6 @@
                         </div>';
                 }
             }
-
             ?>
 
             <button class="w-100 btn btn-lg btn-dark" type="submit">Log in</button>
