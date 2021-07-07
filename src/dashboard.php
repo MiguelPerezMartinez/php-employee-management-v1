@@ -1,30 +1,25 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-$method = $_SERVER['REQUEST_METHOD'];
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-if ($method == 'GET') {
-  echo $result = file_get_contents('../resources/employees.json');
-}
+  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="../node_modules/jsgrid/dist/jsgrid.min.css" />
+  <link type="text/css" rel="stylesheet" href="../node_modules/jsgrid/dist/jsgrid-theme.min.css" />
 
-if ($method == 'POST') {
-  $json = json_decode(file_get_contents('../resources/employees.json'));
+  <script type="text/javascript" src="../node_modules/jsgrid/dist/jsgrid.min.js"></script>
 
-  $data = array(
-    'id' => count($json) + 1,
-    'name' => $_POST['name'],
-    'lastName' => $_POST['lastName'],
-    'email' => $_POST['email'],
-    'gender' => $_POST['gender'],
-    'city' => $_POST['city'],
-    'streetAddress' => $_POST['streetAddress'],
-    'state' => $_POST['state'],
-    'age' => $_POST['age'],
-    'postalCode' => $_POST['postalCode'],
-    'phoneNumber' => $_POST['phoneNumber']
-  );
+  <link rel="stylesheet" href="../styles.css">
+  <title>Document</title>
+</head>
 
-  array_push($json, $data);
-  $fp = fopen("../resources/employees.json", "w");
-  fwrite($fp, json_encode($json));
-  fclose($fp);
-}
+<body>
+  <div id="jsGrid"></div>
+</body>
+
+
+</html>
+<script src="../assets/js/jsgrid.js"></script>
