@@ -1,13 +1,15 @@
 <?php
 session_start();
+logOut();
 
-if (isset($_GET["logout"])) {
-  session_start();
-  unset($_SESSION);
-  session_destroy();
+function logOut()
+{
+  if (isset($_GET["logout"])) {
+    unset($_SESSION);
+    session_destroy();
 
-  if (!isset($_SESSION)) {
-    header("location: ../../index.php");
+    if (!isset($_SESSION)) {
+      header("location: ../../index.php");
+    }
   }
 }
-

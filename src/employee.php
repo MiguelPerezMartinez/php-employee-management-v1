@@ -23,7 +23,7 @@ if (!isset($_SESSION["email"])) {
   <title>Document</title>
 </head>
 
-<body>
+<body onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()">
   <?php
   include "../assets/html/header.html";
   ?>

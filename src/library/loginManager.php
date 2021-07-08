@@ -17,9 +17,3 @@ function checkUserInfo($data)
         }
     }
 }
-
-
-// function checkLogout()
-// {
-//     if (isset($_GET["logout"]) && !isset($_SESSION["email"])) return ["type" => "primary", "text" => "Logout succesful"];
-// }
