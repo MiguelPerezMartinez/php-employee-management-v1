@@ -1,1 +1,15 @@
-// llamada a loginManager para verificar si el usuario esta activo, si han pasado 10 minutos se hace logout 
+<?php
+session_start();
+logOut();
+
+function logOut()
+{
+  if (isset($_GET["logout"])) {
+    unset($_SESSION);
+    session_destroy();
+
+    if (!isset($_SESSION)) {
+      header("location: ../../index.php");
+    }
+  }
+}

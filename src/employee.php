@@ -1,4 +1,9 @@
 <?php
+include "library/sessionHelper.php";
+
+if (!isset($_SESSION["email"])) {
+    header("Location: ../index.php");
+}
 $id = $_GET["id"];
 require_once("./library/employeeManager.php");
 $employee = getEmployee($id);
@@ -15,7 +20,10 @@ echo  ' <!DOCTYPE html>
     <title>Document</title>
 </head>
 
-<body>
+<body onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()">
+  
+' . require ("../assets/html/header.html") . '
+  
     <main class="form-signin">
         <form id="formEmployee" action="./library/employeeController.php" method="PUT">
             <div class="container">
@@ -83,7 +91,8 @@ echo  ' <!DOCTYPE html>
         </form>
     </main>
 </body>
-
+<script src="../assets/js/navbar.js"></script>
 </html>
+
 
 ';
