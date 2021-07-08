@@ -45,21 +45,17 @@ $("#jsGrid").jsGrid({
   },
 
   rowClick: function (element) {
-    // console.log(element.item.id);
-
     window.location.href = "./employee.php?id=" + element.item.id;
   },
 
-  // rowClick: function (args) {
-  //   var getData = args.item;
-  //   var keys = Object.keys(getData);
-  //   var text = [];
-
-  //   $.each(keys, function (index, value) {
-  //     text.push(value + " : " + getData[value]);
-  //   });
-  //   alert(text.join(", "));
-  // },
+  onItemInserted: function (args) {
+    var $d = $(
+      '<div class="alert alert-success" role="alert">New employee added successfully!</div>'
+    );
+    if (args.item == true) {
+      $d.html();
+    }
+  },
 
   fields: [
     {
