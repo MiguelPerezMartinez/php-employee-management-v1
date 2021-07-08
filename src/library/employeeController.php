@@ -13,6 +13,7 @@ switch ($method) {
   case "PUT":
     parse_str(file_get_contents("php://input"), $_PUT);
     updateEmployee($_PUT);
+    header("Location: ../employee.php?id=" . $_PUT["id"]);
     break;
   case "DELETE":
     parse_str(file_get_contents("php://input"), $_DELETE);

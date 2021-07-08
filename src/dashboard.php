@@ -19,6 +19,7 @@ if (!isset($_SESSION["email"])) {
   <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
   <link type="text/css" rel="stylesheet" href="../node_modules/jsgrid/dist/jsgrid.min.css" />
   <link type="text/css" rel="stylesheet" href="../node_modules/jsgrid/dist/jsgrid-theme.min.css" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
   <link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
 
   <script type="text/javascript" src="../node_modules/jsgrid/dist/jsgrid.min.js"></script>

@@ -3,12 +3,13 @@ $("#jsGrid").jsGrid({
   height: "auto",
 
   inserting: true,
-  editing: true,
+  editing: false,
   sorting: true,
   paging: true,
   autoload: true,
   pageSize: 10,
   pageButtonCount: 5,
+  selecting: true,
   deleteConfirm: "Do you really want to delete data?",
 
   controller: {
@@ -42,6 +43,23 @@ $("#jsGrid").jsGrid({
       });
     },
   },
+
+  rowClick: function (element) {
+    // console.log(element.item.id);
+
+    window.location.href = "./employee.php?id=" + element.item.id;
+  },
+
+  // rowClick: function (args) {
+  //   var getData = args.item;
+  //   var keys = Object.keys(getData);
+  //   var text = [];
+
+  //   $.each(keys, function (index, value) {
+  //     text.push(value + " : " + getData[value]);
+  //   });
+  //   alert(text.join(", "));
+  // },
 
   fields: [
     {
