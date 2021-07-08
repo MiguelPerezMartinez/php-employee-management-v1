@@ -5,6 +5,7 @@ if (current[last - 1].includes("dashboard")) {
   $("#dash").addClass("active");
   $("#emp").removeClass("active");
 }
+
 if (current[last - 1].includes("employee")) {
   $("#emp").addClass("active");
   $("#dash").removeClass("active");

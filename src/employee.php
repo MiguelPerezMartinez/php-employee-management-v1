@@ -1,6 +1,5 @@
 <!-- TODO Employee view -->
 <?php
-
 include "library/sessionHelper.php";
 
 if (!isset($_SESSION["email"])) {
