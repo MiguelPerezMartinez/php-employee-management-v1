@@ -2,7 +2,7 @@
 include "library/sessionHelper.php";
 
 if (!isset($_SESSION["email"])) {
-    header("Location: ../index.php");
+  header("Location: ../index.php");
 }
 $id = $_GET["id"];
 require_once("./library/employeeManager.php");
@@ -22,7 +22,7 @@ echo  ' <!DOCTYPE html>
 
 <body onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()">
   
-' . require ("../assets/html/header.html") . '
+' . include "../assets/html/header.html" . '
   
     <main class="form-signin">
         <form id="formEmployee" action="./library/employeeController.php" method="PUT">
@@ -84,15 +84,13 @@ echo  ' <!DOCTYPE html>
                     </div>
                 </div>
             </div>
-            <button class="btn btn-lg btn-primary mt-4" type="submit">Submit
-              
-            </button>
+            <button class="btn btn-lg btn-primary mt-4" type="submit">Submit</button>
             <button class="btn btn-lg btn-outline-primary mt-4 ml-2" type="submit">Return</button>
         </form>
     </main>
 </body>
-<script src="../assets/js/navbar.js"></script>
 </html>
+<script src="../assets/js/navbar.js"></script>
 
 
 ';
