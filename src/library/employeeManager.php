@@ -81,11 +81,17 @@ function updateEmployee($_PUT)
 }
 
 
-// function getEmployee(string $id)
-// {
-//   $result = json_decode(file_get_contents('../resources/employees.json'), true);
-//   echo json_encode($result, JSON_FORCE_OBJECT);
-// }
+function getEmployee(string $id)
+{
+  $result = json_decode(file_get_contents('../resources/employees.json'), true);
+
+
+  foreach ($result as $element) {
+    if ($element["id"] == $id) {
+      return $element;
+    }
+  }
+}
 
 
 // function removeAvatar($id)
