@@ -1,6 +1,8 @@
 <!-- TODO Employee view -->
 <?php
-session_start();
+
+include "library/sessionHelper.php";
+
 if (!isset($_SESSION["email"])) {
   header("Location: ../index.php");
 }
