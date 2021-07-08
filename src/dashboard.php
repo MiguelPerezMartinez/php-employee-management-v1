@@ -16,6 +16,7 @@ if (!isset($_SESSION["email"])) {
   <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
   <link type="text/css" rel="stylesheet" href="../node_modules/jsgrid/dist/jsgrid.min.css" />
   <link type="text/css" rel="stylesheet" href="../node_modules/jsgrid/dist/jsgrid-theme.min.css" />
+  <link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
 
   <script type="text/javascript" src="../node_modules/jsgrid/dist/jsgrid.min.js"></script>
 
@@ -24,9 +25,13 @@ if (!isset($_SESSION["email"])) {
 </head>
 
 <body>
+  <?php
+  include "../assets/html/header.html";
+  ?>
   <div id="jsGrid"></div>
 </body>
 
 
 </html>
 <script src="../assets/js/jsgrid.js"></script>
+<script src="../assets/js/navbar.js"></script>
