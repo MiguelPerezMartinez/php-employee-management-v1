@@ -88,7 +88,7 @@ echo '
                 </div>
                 <div class="row">
                   <button class="btn btn-lg btn-primary mt-4" type="submit">Submit</button>
-                  <button class="btn btn-lg btn-outline-primary mt-4 ml-2" type="submit">Return</button>
+                  <a href="dashboard.php"><button class="btn btn-lg btn-outline-primary mt-4 ml-2" type="button">Return</button></a>
                 </div>
             </div>
         </form>

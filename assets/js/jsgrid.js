@@ -44,6 +44,10 @@ $("#jsGrid").jsGrid({
     },
   },
 
+  onItemInserted: function (args) {
+    console.log(args);
+  },
+
   rowClick: function (element) {
     // console.log(element.item.id);
 
