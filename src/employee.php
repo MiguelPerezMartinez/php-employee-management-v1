@@ -15,14 +15,17 @@ echo  ' <!DOCTYPE html>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/main.css">;
+    <link rel="stylesheet" href="../styles.css">
     <title>Document</title>
 </head>
 
 <body onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()">
-  
-' . include "../assets/html/header.html" . '
+';
+echo include "../assets/html/header.html";
+echo '
   
     <main class="form-signin">
         <form id="formEmployee" action="./library/employeeController.php" method="PUT">
@@ -83,9 +86,11 @@ echo  ' <!DOCTYPE html>
                         <input name="phoneNumber" value=" ' . $employee["phoneNumber"] .  '" type="text" class="form-control" id="floatingPhoneNumber" placeholder="Employe phone number" data-bs-toggle="tooltip" data-bs-html="true">
                     </div>
                 </div>
+                <div class="row">
+                  <button class="btn btn-lg btn-primary mt-4" type="submit">Submit</button>
+                  <button class="btn btn-lg btn-outline-primary mt-4 ml-2" type="submit">Return</button>
+                </div>
             </div>
-            <button class="btn btn-lg btn-primary mt-4" type="submit">Submit</button>
-            <button class="btn btn-lg btn-outline-primary mt-4 ml-2" type="submit">Return</button>
         </form>
     </main>
 </body>
